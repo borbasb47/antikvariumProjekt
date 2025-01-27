@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nap Antikvárium</title>
+    <style>
+        .registrationForm{
+            display: none;
+        }
+        .loginForm{
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <button id="registrationButton">Regisztrálás</button>
+    <button id="loginButton">Bejelentkezés</button>
+
+    <h3 class="registerPageTitleText" id="registerPageTitleText"></h3>
+    
+    <!-- Regisztrálás -->
+    <form action="/1017projekt/views/regisztracio.html" class="registrationForm" id="registrationForm" method="POST">
+        <h4>email</h4>
+        <input type="text" id="email" name="email">
+        <br>
+        <br>
+        <h4>jelszó</h4>
+        <input type="password" id="password" name="password">
+        <br>
+        <br>
+        <h4>jelszó mégegyszer</h4>
+        <input type="password" id="passwordAgain" name="passwordAgain">
+        <input type="hidden" id="hiddenInputRegistration" name="hiddenInput" value="">
+        <button id="submitDataRegist" name="submitDataRegist">Submit</button>
+    </form>
+    
+    <!-- Bejelentkezés -->
+    <form action="/1017projekt/views/regisztracio.html" class="loginForm" id="loginForm" method="POST">
+        <h4>email</h4>
+        <input type="text" id="loginEmail" name="loginEmail">
+        <br>
+        <br>
+        <h4>jelszó</h4>
+        <input type="password" id="loginPassword" name="loginPassword">
+        <input type="hidden" id="hiddenInputLogin" name="hiddenInput" value="">
+        <button id="submitDataLogin" name="submitDataLogin">Submit</button>
+    </form>
+    <h1 id="test"></h1>
+
+    <script src="../public/javascripts/registLoginSwitch.js"></script>
+    <script src="../public/javascripts/registrationData.js"></script>
+</body>
+</html>
