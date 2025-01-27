@@ -5,7 +5,7 @@ submitDataRegist.onclick=function(){
     var registPasswordAgain=document.forms["registrationForm"]["passwordAgain"].value
     const userData={email:registEmail,password:registPassword,passwordAgain:registPasswordAgain}
     const userJson=JSON.stringify(userData)
-    fetch('../api/registUser.php', {
+    fetch('../api/userRegistration.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

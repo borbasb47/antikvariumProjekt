@@ -1,9 +1,9 @@
 <?php
-require_once("./connection.php");
+require_once("../api/connection.php");
 
-$sql = $conn->query("SELECT COUNT(email) as count FROM felhasznalo");
-if ($sql) {
-    $numOfUsers = $sql->fetch_assoc()['count'];
+$sqlNumOfUsers = $conn->query("SELECT COUNT(email) as count FROM felhasznalo");
+if ($sqlNumOfUsers) {
+    $numOfUsers = $sqlNumOfUsers->fetch_assoc()['count'];
     echo json_encode(['count' => $numOfUsers]);
 } else {
     echo json_encode(['error' => $conn->error]);

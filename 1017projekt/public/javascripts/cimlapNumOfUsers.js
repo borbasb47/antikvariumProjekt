@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var numOfUsers = document.getElementById("numOfUsers");
     function NumOfUsers() {
-        fetch('api/cimlapNumOfUsers.php')   
+        fetch('../api/cimlapNumOfUsers.php')   
             .then(response => response.json())
             .then(data => {
                 console.log(data);

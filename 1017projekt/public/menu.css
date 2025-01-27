@@ -28,7 +28,6 @@ footer{
     left: 0;
   }
   
-  /* Style the links inside the navigation bar */
   .menu a {
     float: left;
     display: block;
@@ -39,19 +38,16 @@ footer{
     font-size: 17px;
   }
   
-  /* Change the color of links on hover */
   .menu a:hover {
     background-color: #6D2932;
     color: #E8D8C4;
   }
   
-  /* Add an active class to highlight the current page */
   .menu a.active {
     background-color: #6D2932;
     color: #E8D8C4;
   }
   
-  /* Hide the link that should open and close the topnav on small screens */
   .menu .icon {
     display: none;
   }
@@ -60,7 +56,6 @@ footer{
     
   }
   
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
   @media only screen and (max-width: 600px) {
     .menu a:not(:first-child) {display: none;}
     .menu a.icon {
