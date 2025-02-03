@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 01. 16:09
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Feb 03. 12:12
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,7 +88,7 @@ INSERT INTO `alkategoriak` (`id`, `megnevezes`) VALUES
 
 CREATE TABLE `allapot` (
   `id` int(11) NOT NULL,
-  `megnevezes` text NOT NULL
+  `megnevezes` text CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -96,10 +96,10 @@ CREATE TABLE `allapot` (
 --
 
 INSERT INTO `allapot` (`id`, `megnevezes`) VALUES
-(1, 'bontatlan/hibátlan'),
-(2, 'jó'),
-(3, 'közepes'),
-(4, 'sérült'),
+(1, 'bontatlan/hib?tlan'),
+(2, 'j?'),
+(3, 'k?zepes'),
+(4, 's?r?lt'),
 (5, 'rossz');
 
 -- --------------------------------------------------------
@@ -110,7 +110,7 @@ INSERT INTO `allapot` (`id`, `megnevezes`) VALUES
 
 CREATE TABLE `borito` (
   `id` int(11) NOT NULL,
-  `megnevezes` text NOT NULL
+  `megnevezes` text CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -118,23 +118,23 @@ CREATE TABLE `borito` (
 --
 
 INSERT INTO `borito` (`id`, `megnevezes`) VALUES
-(1, 'puhatáblás'),
-(2, 'keménytáblás'),
-(3, 'kartonált'),
-(4, 'm?b?rkötés'),
+(1, 'puhat?bl?s'),
+(2, 'kem?nyt?bl?s'),
+(3, 'karton?lt'),
+(4, 'm?b?rk?t?s'),
 (5, 'ragasztott'),
-(6, 'cérnaf?zött, keménytáblás'),
-(7, 'irkaf?zött'),
-(8, 'spirál'),
-(9, 'könyvköt?i kötés'),
-(10, 'vászon'),
-(11, 'félvászon'),
-(12, 't?zött kötés'),
+(6, 'c?rnaf?z?tt, kem?nyt?bl?s'),
+(7, 'irkaf?z?tt'),
+(8, 'spir?l'),
+(9, 'k?nyvk?t?i k?t?s'),
+(10, 'v?szon'),
+(11, 'f?lv?szon'),
+(12, 't?z?tt k?t?s'),
 (13, 'b?r'),
-(14, 'nyl kötés'),
+(14, 'nyl k?t?s'),
 (15, 'tok'),
-(16, 'fémdoboz'),
-(17, 'díszdoboz');
+(16, 'f?mdoboz'),
+(17, 'd?szdoboz');
 
 -- --------------------------------------------------------
 
@@ -234,7 +234,7 @@ CREATE TABLE `termekek` (
   `osszefoglalo` text NOT NULL,
   `kategoriaID` int(11) NOT NULL,
   `alkategoriaID` int(11) NOT NULL,
-  `tipus` int(11) NOT NULL,
+  `tipusID` int(11) NOT NULL,
   `hossz` text DEFAULT NULL,
   `allapotID` int(11) DEFAULT NULL,
   `pontok` int(11) DEFAULT NULL,
@@ -245,7 +245,7 @@ CREATE TABLE `termekek` (
 -- A tábla adatainak kiíratása `termekek`
 --
 
-INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `forgalmazo`, `meret`, `nyelv`, `osszefoglalo`, `kategoriaID`, `alkategoriaID`, `tipus`, `hossz`, `allapotID`, `pontok`, `kepURL`) VALUES
+INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `forgalmazo`, `meret`, `nyelv`, `osszefoglalo`, `kategoriaID`, `alkategoriaID`, `tipusID`, `hossz`, `allapotID`, `pontok`, `kepURL`) VALUES
 (100000, 'Kiscsillag', 'Pippa Funnell', '2022', 850, 1, 'Manó könyvek', '13x19', 'magyar', 'Az Ezüstpatkó tanya és Cavandish Hall lovasai táborba készülnek, ahová mindenki magával viheti a lovát. Tilly Szellőrózsát választja, a tábori feladatok - mint például a díjlovaglás - azonban komoly kihívások elé állítják mindkettőjüket. Ráadásul Tilly gondolatai néha messze járnak, hiszen az Ezüstpatkó tanyán tavasszal új kiscsikó született, és elutazása előtt anyukája egy különös, régi fényképet mutatott Tillynek, mely vér szerinti édesanyját ábrázolja, aki a kép tanúsága szerint egykor maga is szenvedélyes lovas volt.\r\n', 4, 11, 1, '110', 2, 50, 'https://moly.hu/system/covers/big/covers_383226.jpg\r\n'),
 (100001, 'Az elvarázsolt palota', 'Rosie Banks', '2020', 2200, 1, 'Manó könyvek', '13x19', 'magyar', 'Nelli, Fanni és Jázmin nagyon jó barátnők, ráadásul egy iskolába is járnak. Egy nap furcsa kis ládikót találnak az osztálytermükben. Hazaviszik, megtisztogatják, és a doboz tetején levő tükör egyszer csak fényleni kezd. Kiderül, hogy a varázslatos ládikó segítségével elrepülhetnek egy titkos, mesebeli birodalomba, ahol éppen Vidám király születésnapjára készül mindenki. A király testvére, Keserű királynő azonban gonosz tervet forral, tönkre akarja tenni az ünnepséget. Vajon sikerül a lányoknak megtörni a királynő sötét varázslatát?\r\n', 4, 11, 1, '111', 2, 0, 'https://s01.static.libri.hu/cover/8d/f/869988_4.jpg\r\n'),
 (100008, 'Plüss invázió', 'Ken Derby-Kocsis Eszter', '2018', 200, 2, 'Cser Könyvkiadó', '27x15', 'magyar-angol', 'Patkánypofa és bandája világuralomra tör! Kétnyelvű mese, amelynek bábos illusztrációja elnyerte a japán JIA Illustration Award nemzetközi zsűrijének 2018. évi különdíját.\r\n', 4, 11, 1, '40', 2, 0, 'https://lira.erbacdn.net/upload/M_28/rek1/238/1547238.jpg\r\n'),
@@ -321,7 +321,7 @@ INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `
 (100078, 'A tizedik lány', 'Sara Faring', '2022', 2800, 3, 'Maximum Könyvkiadó Kft', '14x21', 'magyar', 'Egy kísértetjárta argentin kúria. Egy családi átok. És egy csavar, amire egyáltalán nem számítanál. Üdvözlünk mindenkit a Vaccaro Iskolában! Dél-Amerika legdélebbi csücskében egy mindentől elzárt leányiskolát találunk. Különös erők sújtják ezt a szentségtelen szikladarabot, a legenda szerint mindenki el lesz átkozva, aki itt merészel letelepedni. Mavi számára viszont ez a hely az egyetlen kiút, hiszen édesanyját elragadta a kormányzó hatalom, így a neki el kell hagynia otthonát, Buenos Airest. Fiatal tanárként itt kezdhet új életet, Argentína leggazdagabb leánynövendékei között. Mavi megpróbálja elfogadni a nagy múltú intézmény idegenszerűségét. De amikor tíz diákja közül az egyik eltűnik, és mindenki úgy kezd viselkedni, mintha megszállták volna, nem tud többé nem tudomást venni a szentségtelen sziklán kísértő erőkről. Meg akarja fejteni a hiányzó lány rejtélyét a figyelmeztetések ellenére is, hogy veszélyes éjszaka kószálnia. Ráadásul különös Másvilágiakról szóló pletykák is keringenek. Az egyik ilyen lélek, egy rejtélyes fiatalember olyan titkokat őriz, amelyek Mavinak nemcsak az érzéseire, hanem a puszta létezésére is hatással vannak.', 7, 24, 1, '464', 2, 0, 'https://moly.hu/system/covers/big/covers_555706.jpg?1560859196'),
 (100079, '13 - Das erste Buch der Zeit', 'Rose Snow', '2018', 2100, 1, 'Magánkiadás', '13x19', 'magyar', 'Nach dem Tod ihrer Tante ist die 17-jährige Lizzy gezwungen, zu dem Patenonkel ihres Vaters aufs Land zu ziehen. Doch statt der erwarteten Langeweile begegnet ihr der geheimnisvolle Rouven, mit dem sieregelmäßig aneinander knallt. Dabei hat Lizzy völlig andere Sorgen, denn die ganze Kleinstadt steckt voller Geheimnisse - und das größte davon scheint sie selbst zu sein. Was hat es mit den knisternden blauen Blitzen auf sich, die Lizzy auf einmal sehen kann?', 7, 24, 1, '260', 2, 0, 'https://m.media-amazon.com/images/I/610FcAzAR2L._AC_UF1000,1000_QL80_.jpg'),
 (100080, 'Where you are', 'Tammara Webber', '2016', 1900, 2, 'Könyvmolyképző Kiadó Kft', '14x21', 'magyar', 'Amint a legutóbbi filmje forgatásán megismerkedtek, Graham Douglas rögtön odavolt Emma Pierce-ért. Ám a lányt a szupersztár Reid Alexander szemelte ki magának. Miután Graham a forgatás alatt minden tőle telhetőt megtett, hogy ne szeressen bele Emmába, kap még egy esélyt véletlenül összetalálkoznak New Yorkban. És ezúttal ki is akarja használni a lehetőséget. Emma Pierce feláldozta ígéretes hollywoodi karrierjét, hogy átlagos lányként élhessen. Azt hitte, úrrá lett érzésein a két nagyon különböző fiú iránt, akik legutóbbi filmje forgatásán vetélkedtek a szívéért, ám a sors egy manhattani kávézóba sodorja, ahol szembetalálja magát azzal a sráccal, aki még mindig hiányzik neki.', 7, 18, 1, '337', 2, 0, 'https://moly.hu/system/covers/big/covers_373509.jpg');
-INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `forgalmazo`, `meret`, `nyelv`, `osszefoglalo`, `kategoriaID`, `alkategoriaID`, `tipus`, `hossz`, `allapotID`, `pontok`, `kepURL`) VALUES
+INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `forgalmazo`, `meret`, `nyelv`, `osszefoglalo`, `kategoriaID`, `alkategoriaID`, `tipusID`, `hossz`, `allapotID`, `pontok`, `kepURL`) VALUES
 (100081, 'Új Élet Keddtől!', 'Luis Carlos Montalvan - Bret Witter', '2014', 3500, 5, 'Könyvmolyképző Kiadó Kft', '13x20', 'magyar', 'Luis Montalván, az amerikai hadsereg többszörösen kitüntetett századosa, aki kétszer teljesített szolgálatot Irakban, soha nem hátrált meg a kihívások elől. Leszerelése után azonban sebesülései és a poszttraumás stressz egyre erősebben éreztették a hatásukat. Luis már nem nagyon bízott a gyógyulásban. Aztán megismerte Keddet, a finom lelkű golden retrievert, akit sérült emberek ellátására képeztek ki. Kedd korábban börtönviseltek és fiatalkorú bűnözők között élt, ezért nehezen bízott meg az emberekben de akkor jött Luis.', 7, 18, 1, '300', 2, 0, 'https://s01.static.libri.hu/cover/9a/3/1960701_4.jpg'),
 (100082, 'Forgive my fins', 'Tera Lynn Childs', '2012', 1300, 2, 'Könyvmolyképző Kiadó Kft', '14x21', 'magyar', 'Lily Sandersonnak van egy titka nem az, hogy halálosan szerelmes a Brody Bennett nevű jóképű úszóistenbe, akinek láttán a szíve partra vetett halként vergődik. A viszonzatlan szerelmet még egy normális kamaszlány is nehezen éli meg, de ha valaki félig ember, félig sellő, mint Lily, végképp nem beszélhetünk egyszerű kis kalandról. Lily titka nem derülhet ki, mivel ő nem akármilyen sellő, hanem Thalasszinia hercegnője. Amikor Lily három éve megtudta, hogy az édesanyja valójában ember volt, végre rájött, miért nem érzi igazán otthon magát Thalassziniában. Azóta is a szárazföldön él, és a Seaview Gimnáziumba jár, abban a reményben, hogy sikerül igazi otthonra lelnie. Persze a szárazföldön is akadnak nehézségek.', 7, 24, 1, '262', 2, 0, 'https://book24.hu/img/boritok/books/722919f.gif'),
 (100083, 'The beast', 'Ann Evans', '2007', 1400, 1, 'Usborne Publising Ltd.', '13x19', 'angol', 'Grant can\'t understand why his sister is so freaked out on their family camping trip. He doesn\'t believe her scary story about a monstrous shimmering shape leaping down the mountainside. But when he hears the menacing sound of a huge creature stalking around their tent at night, he starts to change his mind. Somewhere out there, the beast that haunts the Valley of Shadows is gathering strength. Readying itself to attack...', 7, 24, 1, '163', 2, 0, 'https://m.media-amazon.com/images/I/81SpA0rqRoL.jpg'),
@@ -408,7 +408,7 @@ INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `
 (100164, 'Kaleidoszkóp', 'Zséda', '2025', 2400, 15, 'magneoton kiadó', '58gr', ' angol-német-francia-magyar-spanyol', 'Több mint 20 éve annak, hogy Zséda debütáló lemezével teljesen levette a közönséget a lábáról, ma pedig már a zeneipar megkerülhetetlen dívája. Az énekesnő egy változatos és progresszív, 12 felvételből álló lemezzel, a \'Kaleidoszkóp\'-pal tért vissza.', 11, 37, 2, '?', 2, 0, 'https://s01.static.libri.hu/cover/75/6/11652707_4.jpg'),
 (100165, 'Fellázad a Semmibe Vett Öröklét', 'Vágtázó Halottkémek', '2025', 3200, 15, 'grundrecords kft.', '100gr', 'magyar', 'A Vágtázó Halottkémek legújabb lemeze a Fellázad a Semmibe Vett Öröklét címmel az életet embervoltunkat kiteljesítő forradalomként átélő őrültek csapatának 50. évfordulójára jelenik meg. A VHK zenéje mindig is egyedül a zenénél mélyebb, örök alkotóerőből, a kozmikus életben rejlő törvényerejű érzések motiváló erejéből merített, ezért úgy maradt ötven éven át önazonos, hogy soha nem ismételte önmagát. A VHK-t emellett szokás az etno-punk, sámán-punk vagy pszichedelikus hardcore jelzőkkel is illetni, mivel elektromos hangszereket és mennydörgő üstdobokat szólaltatnak meg és a legjobban az extatikus sámánszertartásokhoz, a hardcore punk, a pszichedelikus rock lendületéhez, vadságához és tudattágításához lehet hasonlítani. Az új album a teljességében megélt élet zenei lenyomata, a radikális eredetiség, a nyers energia és a túlcsorduló szépség összhangzata.\r\n', 11, 37, 2, '?', 2, 0, 'https://s01.static.libri.hu/cover/0a/6/11667518_4.jpg'),
 (100166, 'Kaleidoszkóp', 'Zséda', '2025', 2400, 15, 'magneoton kiadó', '58gr', ' angol-német-francia-magyar-spanyol', 'Több mint 20 éve annak, hogy Zséda debütáló lemezével teljesen levette a közönséget a lábáról, ma pedig már a zeneipar megkerülhetetlen dívája. Az énekesnő egy változatos és progresszív, 12 felvételből álló lemezzel, a \'Kaleidoszkóp\'-pal tért vissza.', 11, 37, 2, '?', 2, 0, 'https://s01.static.libri.hu/cover/75/6/11652707_4.jpg');
-INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `forgalmazo`, `meret`, `nyelv`, `osszefoglalo`, `kategoriaID`, `alkategoriaID`, `tipus`, `hossz`, `allapotID`, `pontok`, `kepURL`) VALUES
+INSERT INTO `termekek` (`id`, `cim`, `alkoto`, `megjelenes`, `ar`, `boritoID`, `forgalmazo`, `meret`, `nyelv`, `osszefoglalo`, `kategoriaID`, `alkategoriaID`, `tipusID`, `hossz`, `allapotID`, `pontok`, `kepURL`) VALUES
 (100167, 'Vissza sose nézz', 'Pokolgép', '2024', 3500, 15, 'grundrecords kft.', '96gr', 'magyar', '9 hosszú év után vadonatúj stúdióalbummal lepi meg rajongóit a Pokolgép. Énekesváltással kezdődött a 40. jubileumi év a zenekar számára: március elején foglalta el helyét a mikrofon mögött Bánhegyesi Richárd. A nyári koncertek során megszilárdult felállás egy kislemezzel már bebizonyította, hogy a Pokolgép továbbra is előkelő helyet követel magának a hazai metál színtér élvonalában, most viszont végre megérkezett a várva várt teljes nagylemez!\r\nA 10 vadonatúj szerzemény csípőből hozza a Pokolgéptől megszokott védjegyszerű gitárhangzást, a minőségi szólókat és a fülbemászó énekdallamokat. Az album úgy lett modern, hogy közben az ősrajongók elvárásainak is tökéletesen megfelel. A pokoli hangzás Cserfalvi \'Töfi\' Zoltán munkáját dicséri. A lemez végén bónuszként helyet kapott az ősszel megjelent kislemez két dala is, így a CD-gyűjtők sem maradnak le Ricsi bemutatkozásáról.', 11, 37, 2, '?', 2, 0, 'https://s01.static.libri.hu/cover/e0/6/11518759_4.jpg'),
 (100168, 'Az első adventi gyertya - Karácsonyi válogatás', 'vegyes', '2024', 2600, 15, 'mg records zrt.', '80gr', 'magyar', 'Az E.Z.S. Music kiadó, sok év után ismét új karácsonyi dalokkal jelentkezik. A fiatal, tehetséges pályakezdő énekesek többnyire ezen az albumon mutatkoznak be először a szélesebb nyilvánosság előtt. A meghitt ünnepi-karácsonyi tételek mellett, gyerekdalok is helyet kaptak a korongon.', 11, 37, 2, '?', 2, 0, 'https://s01.static.libri.hu/cover/37/e/11507141_4.jpg'),
 (100169, 'Speak Now (Taylor\'s Version)', 'Taylor Swift', '2023', 3400, 15, 'universal music hanglemezkiadó kft.', '122gr', 'angol', 'Taylor Swift harmadik albumának újragondolt változata, rajta 6, eddig soha ki nem adott felvétellel!', 11, 37, 2, '?', 2, 0, 'https://s01.static.libri.hu/cover/20/7/10086388_4.jpg'),
@@ -523,7 +523,10 @@ ALTER TABLE `megrendeles`
 ALTER TABLE `termekek`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_kategoriaID` (`kategoriaID`),
-  ADD KEY `fk_alkategoriaID` (`alkategoriaID`);
+  ADD KEY `fk_alkategoriaID` (`alkategoriaID`),
+  ADD KEY `boritoID` (`boritoID`),
+  ADD KEY `allapotID` (`allapotID`),
+  ADD KEY `tipusID` (`tipusID`);
 
 --
 -- A tábla indexei `tipus`
@@ -588,7 +591,10 @@ ALTER TABLE `kosar`
 --
 ALTER TABLE `termekek`
   ADD CONSTRAINT `fk_alkategoriaID` FOREIGN KEY (`alkategoriaID`) REFERENCES `alkategoriak` (`id`),
-  ADD CONSTRAINT `fk_kategoriaID` FOREIGN KEY (`kategoriaID`) REFERENCES `kategoriak` (`id`);
+  ADD CONSTRAINT `fk_kategoriaID` FOREIGN KEY (`kategoriaID`) REFERENCES `kategoriak` (`id`),
+  ADD CONSTRAINT `termekek_ibfk_1` FOREIGN KEY (`boritoID`) REFERENCES `borito` (`id`),
+  ADD CONSTRAINT `termekek_ibfk_2` FOREIGN KEY (`allapotID`) REFERENCES `allapot` (`id`),
+  ADD CONSTRAINT `termekek_ibfk_3` FOREIGN KEY (`tipusID`) REFERENCES `tipus` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
