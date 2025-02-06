@@ -1,5 +1,5 @@
 <?php
-require_once("../api/connection.php");
+require_once("/1017projekt/api/connection.php");
 
 $jsonUserData = file_get_contents('php://input');
 
@@ -21,5 +21,5 @@ if (isset($userData['email']) && isset($userData['password'])) {
         echo "Hiba: " . $conn->error;
     }
 } else {
-    echo "Missing email or password in the request.";
+    echo "Hiányos adatok";
 }
