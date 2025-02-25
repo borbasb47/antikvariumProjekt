@@ -37,7 +37,7 @@
     </form>
     
     <!-- Bejelentkezés -->
-    <form action="/1017projekt/views/regisztracio.html" class="loginForm" id="loginForm" method="POST">
+    <form action="/1017projekt/views/regisztracio.html" class="loginForm" id="loginForm" method="GET">
         <h4>email</h4>
         <input type="text" id="loginEmail" name="loginEmail">
         <br>
@@ -47,9 +47,8 @@
         <input type="hidden" id="hiddenInputLogin" name="hiddenInput" value="">
         <button id="submitDataLogin" name="submitDataLogin">Submit</button>
     </form>
-    <h1 id="test"></h1>
 
     <script src="/1017projekt/public/javascripts/registLoginSwitch.js"></script>
-    <script src="/1017projekt/public/javascripts/registrationData.js"></script>
+    <script src="/1017projekt/public/javascripts/registrationLoginData.js"></script>
 </body>
 </html>
