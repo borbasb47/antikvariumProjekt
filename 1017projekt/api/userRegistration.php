@@ -27,8 +27,3 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         echo "Hiányos adatok";
     }*/
 }
-
-//bejelentkezés
-if($_SERVER["REQUEST_METHOD"] === "POST"){
-
-}
