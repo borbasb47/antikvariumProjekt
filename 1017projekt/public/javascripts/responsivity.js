@@ -1,7 +1,7 @@
 
 //reszponzív menü
 function myFunction() {
-    var x = document.getElementById("myTopnav");
+    var x = document.getElementById("menusav");
     if (x.className === "menu") {
       x.className += " responsive";
     } else {
