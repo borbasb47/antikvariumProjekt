@@ -71,3 +71,48 @@ h2{
         width: 80%;
     }
 }
+
+.kartya {
+    border: 2px solid #E8D8C4;
+    width: 300px;
+    height: 500px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 0;
+    margin-top: 5%;
+    text-align: center;
+    box-shadow: 2px 3px #E8D8C4;
+    border-radius: 10px;
+
+}
+
+#termekek{
+    width: 25%;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: #6D2932;
+}
+
+#kereso{
+    margin-top: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    justify-content: center;
+    background-color: #6D2932;
+    width: 70%;
+    padding: 2%;
+}
+
+#termekKep{
+    height: 250px;
+    max-width: 200px;
+}
