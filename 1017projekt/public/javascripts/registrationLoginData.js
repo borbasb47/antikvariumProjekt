@@ -32,7 +32,7 @@ loginForm.onsubmit=function(event){
         const userData={email:loginEmail,password:loginPassword}  
         console.log(userData)
         const userJson=JSON.stringify(userData)
-        fetch('http://localhost/1017projekt/api/userLogin.php', {
+        fetch('/1017projekt/api/userLogin.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ loginForm.onsubmit=function(event){
         })
         .then(adat => {
             alert(adat.uzenet);
-            window.location.href = adat.redirect;
+            window.location.href = "/1017projekt/views/fooldal.html";
         })
         .catch(error => {
             alert(error.message);

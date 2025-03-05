@@ -18,14 +18,6 @@ footer{
     font-size:10px;
 }
 
-img
-{
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
 .menu {
     margin: 0;
     padding: 0;
@@ -105,4 +97,3 @@ img
         z-index: 1000;
     }
   }
-

@@ -1,5 +1,5 @@
 <?php 
-//session_start();
+session_start();
 
 $parsed = parse_url($_SERVER["REQUEST_URI"]); 
 $path = $parsed["path"];
