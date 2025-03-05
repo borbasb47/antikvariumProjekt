@@ -30,8 +30,9 @@ loginForm.onsubmit=function(event){
     }
     else{
         const userData={email:loginEmail,password:loginPassword}  
+        console.log(userData)
         const userJson=JSON.stringify(userData)
-        fetch('/1017projekt/api/userLogin.php', {
+        fetch('http://localhost/1017projekt/api/userLogin.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
