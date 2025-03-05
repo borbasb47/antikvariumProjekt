@@ -1,44 +1,44 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Könyvesbolt</title>
     <link rel="stylesheet" href="/1017projekt/public/menu.css">
     <link rel="stylesheet" href="/1017projekt/public/termek.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Keresés</title>
 </head>
 <body>
     <header>
-    <div class="menu" id="menusav">
-        <a href="/1017projekt/views/fooldal.html" class="active">Nap antikvárium</a>
+        <div class="menu" id="menusav">
+            <a href="/1017projekt/views/fooldal.html" class="active">Nap antikvárium</a>
             <a href="/1017projekt/views/Konyvkereso.html">könyvek</a>
             <a href="/1017projekt/views/Filmkereso.html">cd/dvd</a>
             <a href="#contact">kapcsolat</a>
             <a href="/1017projekt/views/felhasznalo.html">Felhasználó</a>
             <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
             </a>
-          </div>
+        </div>
     </header>
-    
 
-    <section id="about">
-        <h2>Rólunk</h2>
-        <p>Üdvözöljük a könyvesboltunkban! Széles választékban kínálunk könyveket minden műfajban.</p>
-    </section>
-   
+    <div id="kereso">
+        <form action="">
+            <select name="" id="kategoriakSelect">
 
-    <section id="books">
-        
-    </section>
+            </select>
+            <input type="button" value="Keres" onclick="kivalaszt()">
+        </form>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Könyvesbolt. Minden jog fenntartva.</p>
-        <p>Email: info@konyvesbolt.hu</p>
-        <p>Telefon: +36 1 234 5678</p>
-    </footer>
+    <div id="termekek">
+        <div>
+
+        </div>
+    </div>
+
     <script src="/1017projekt/public/javascripts/responsivity.js"></script>
+    <script src="/1017projekt/public/javascripts/Filmkereso.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Könyv címe</title>
+    <link rel="stylesheet" href="/1017projekt/public/menu.css">
+    <link rel="stylesheet" href="/1017projekt/public/termek.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu" id="myTopnav">
+            <a href="/1017projekt/views/fooldal.html" class="active">Nap antikvárium</a>
+            <a href="/1017projekt/views/Konyvkereso.html">könyvek</a>
+            <a href="/1017projekt/views/Filmkereso.html">cd/dvd</a>
+            <a href="#contact">kapcsolat</a>
+            <a href="/1017projekt/views/felhasznalo.html">Felhasználó</a>
+            <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+    </header>
+    <br>
+    <h2 id="cim">Dorian Gray arcképe</h2>
+    <div id="content">
+        
+        <div id="kep">
+            <img src="./dorian.jpg" alt="Könyv címe" style="max-width: 300px; margin-top: 10px;">
+            <h3>Leírás:</h3>
+            <p id="leiras">A könyv részletes leírása itt található. Itt bemutathatod a történetet, a szereplőket, és minden egyéb fontos információt, ami érdekes lehet a potenciális vásárlók számára.
+            </p>
+        </div>
+        <section id="book-details">
+            
+            <p id="szerzo"><strong>Szerző: </strong> Oscar Wilde</p> <hr>
+            <p id="kiado"><strong>Kiadó: </strong> Athenaeum Kiadó Kft.</p> <hr>
+            <p id="megjelenes"><strong>Kiadás éve:</strong> 2016</p> <hr>
+            <p id="allapot"><strong>Állapot:</strong> Jó</p> <hr>
+            <p id="nyelv"><strong>Nyelv:</strong> Magyar</p> <hr>
+            <p id="oldalszam"><strong>Oldalak száma:</strong> 334</p> <hr>
+            <p id="borito"><strong>Borító:</strong> Keménytáblás</p> <hr>
+            <p id="meret"><strong>Méret:</strong> 374gr</p> <hr>
+            <p id="ar"><strong>Ár:</strong> 3000 Ft</p> <hr>
+        </section>
+    </div>
+
+    <script src="/1017projekt/public/javascripts/responsivity.js"></script>
+</body>
+</html>
