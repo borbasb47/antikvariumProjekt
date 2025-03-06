@@ -9,9 +9,11 @@ require_once("api/connection.php");
 switch ($path) {
     case "/1017projekt/views/regisztracio.html":
         require_once("./views/regisztracio.html");
+        session_unset();
         break;
     case "/1017projekt/":
         require_once('./views/cimlap.html');
+        session_unset();
         break;
     case "/1017projekt/views/fooldal.html":
         require_once('./views/fooldal.html');
