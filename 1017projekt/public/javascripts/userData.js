@@ -4,7 +4,10 @@ function displayUserData() {
         .then(adat => {
             console.log(adat.email);
             var userEmailElement = document.getElementById("userEmail");
-            userEmailElement.innerHTML+=adat.email;
+            userEmailElement.innerHTML+=" "+adat.email;
+            if(
+                
+            )
         });
 }
 displayUserData();

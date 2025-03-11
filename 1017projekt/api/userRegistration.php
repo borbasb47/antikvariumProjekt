@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once("./connection.php");
 
 $jsonUserData = file_get_contents('php://input');

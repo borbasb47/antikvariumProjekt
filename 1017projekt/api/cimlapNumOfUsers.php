@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once("./connection.php");
 $sqlNumOfUsers = $conn->query("SELECT COUNT(email) as count FROM felhasznalo");
 if ($sqlNumOfUsers) {

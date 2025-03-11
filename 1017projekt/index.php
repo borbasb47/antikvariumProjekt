@@ -17,6 +17,7 @@ switch ($path) {
         break;
     case "/1017projekt/views/fooldal.html":
         require_once('./views/fooldal.html');
+        require_once('./api/sessionTest.php');
         break;
     case "/1017projekt/views/konyv.html":
         require_once('./views/konyv.html');

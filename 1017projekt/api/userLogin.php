@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once("./connection.php");
 
@@ -25,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 //sleep(seconds: 0.3);
                 $_SESSION['email']=$email;
                 //header("Location: /1017projekt/views/fooldal.html");
-                echo json_encode(['uzenet' => 'Sikeres bejelentkezés'.$_SESSION['email']]);
+                echo json_encode(['uzenet' => 'Sikeres bejelentkezés']);
                 //$loginAdd=$conn->query("update felhasznalo set felhasznalo.bejelentkezesekSzama=felhasznalo.bejelentkezesekSzama+1 WHERE felhasznalo.email='$email'");
             }
         }
