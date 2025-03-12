@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nap Antikvárium - felhasználó</title>
-    <!-- <link rel="stylesheet" href="/1017projekt/public/felhasznalo.css"> -->
+    <title>Felhasználó oldal</title>
+    <link rel="stylesheet" href="/1017projekt/public/felhasznalo.css">
+    <link rel="stylesheet" href="/1017projekt/public/menu.css">
 </head>
 <body>
+  <header>
+    <div class="menu" id="menusav">
+            <a href="/1017projekt/views/fooldal.html" class="active">Nap Antikvárium</a>
+            <a href="/1017projekt/views/konyvek.html">könyvek</a>
+            <a href="#cds">cd/dvd</a>
+            <a href="/1017projekt/views/kapcsolat.html">kapcsolat</a>
+            <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+    </header>
+
     <div class="bg-text">
-        <h1>Felhasználó adatok</h1>
-        <li id="userEmail">e-mail:</li>
-        <li>jelszó:</li> 
-        <li>irányítószám:</li>
-        <li>város:</li>
-        <li>cím:</li>
-    </div>
-    <script src="/1017projekt/public/javascripts/userData.js"></script>
+        <h1 id="numOfUsers" name="numOfUsers"> Felhasználó adatok</h1>
+        <table>
+            <tr>
+              <th>
+                    <ol>e-mail:</ol>
+                    <ol>jelszó:</ol> 
+                    <ol>irányítószám:</ol>
+                    <ol>cím:</ol>
+            </th>
+            </tr>
+        </table>
+      </div>
 </body>
 </html>
