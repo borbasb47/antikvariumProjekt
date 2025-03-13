@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 $_SESSION['email']=$email;
                 //header("Location: /1017projekt/views/fooldal.html");
                 echo json_encode(['uzenet' => 'Sikeres bejelentkezés']);
-                //$loginAdd=$conn->query("update felhasznalo set felhasznalo.bejelentkezesekSzama=felhasznalo.bejelentkezesekSzama+1 WHERE felhasznalo.email='$email'");
+                $loginAdd=$conn->query("update felhasznalo set felhasznalo.bejelentkezesekSzama=felhasznalo.bejelentkezesekSzama+1 WHERE felhasznalo.email='$email'");
             }
         }
     }

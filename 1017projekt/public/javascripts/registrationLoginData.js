@@ -34,9 +34,7 @@ loginForm.onsubmit=function(event){
         const userJson=JSON.stringify(userData)
         fetch('/1017projekt/api/userLogin.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            header: 'Content-Type: application/json',
             body: userJson
         })
         .then(valasz => {

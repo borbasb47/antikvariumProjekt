@@ -15,6 +15,7 @@
             <a href="/1017projekt/views/konyvek.html">könyvek</a>
             <a href="#cds">cd/dvd</a>
             <a href="/1017projekt/views/kapcsolat.html">kapcsolat</a>
+            <a href="/1017projekt/views/felhasznalo.html">felhasználó</a>
             <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
               <i class="fa fa-bars"></i>
@@ -24,16 +25,23 @@
 
     <div class="bg-text">
         <h1 id="numOfUsers" name="numOfUsers"> Felhasználó adatok</h1>
-        <table>
+        <table id="userDataTable">
             <tr>
               <th>
-                    <ol>e-mail:</ol>
-                    <ol>jelszó:</ol> 
-                    <ol>irányítószám:</ol>
-                    <ol>cím:</ol>
+                <ol id="userEmail">e-mail:</ol>
+                <div id="userZipCode">
+                  <ol id="userZipCodeLine">irányítószám:</ol> 
+                </div>
+                <div id="userStreet">
+                  <ol id="userStreetLine">utca:</ol>
+                </div>
+                <div id="userAddress">
+                  <ol id="userAddressLine">házszám:</ol>
+                </div>
             </th>
-            </tr>
+          </tr>
         </table>
       </div>
+      <script src="/1017projekt/public/javascripts/userData.js"></script>
 </body>
 </html>
