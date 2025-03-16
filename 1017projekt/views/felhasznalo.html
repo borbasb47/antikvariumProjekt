@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +7,34 @@
     <title>Felhasználó oldal</title>
     <link rel="stylesheet" href="/1017projekt/public/felhasznalo.css">
     <link rel="stylesheet" href="/1017projekt/public/menu.css">
+    <link rel="stylesheet" href="/1017projekt/public/egyeb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <header>
     <div class="menu" id="menusav">
-      <a href="/1017projekt/views/fooldal.html" class="active">Nap antikvárium</a>
-      <a href="/1017projekt/views/Konyvkereso.html">könyvek</a>
-      <a href="/1017projekt/views/Filmkereso.html">cd/dvd</a>
-      <a href="/1017projekt/views/kapcsolat.html">kapcsolat</a>
-      <a href="/1017projekt/views/felhasznalo.html">felhasználó</a>
-      <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-      </a>
-            </a>
-          </div>
-    </header>
+
+    </div>
+  </header>
 
     <div class="bg-text">
-        <h1 id="numOfUsers" name="numOfUsers"> Felhasználó adatok</h1>
+      <h1 id="numOfUsers" name="numOfUsers"> Felhasználó adatok</h1>
+      <div id="userDataTable">
+        <div id="userEmail">email: </div>
+        <div id="userZipCode">
+          <div id="userZipCodeLine">irányítószám: </div>
+        </div>
+        <div id="userStreet">
+          <div id="userStreetLine">utca: </div>
+        </div>
+        <div id="userAddress">
+          <div id="userAddressLine">házszám: </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="bg-text">
+      <h1 id="numOfUsers" name="numOfUsers"> Felhasználó adatok</h1>
         <table id="userDataTable">
             <tr>
               <th>
@@ -42,7 +51,8 @@
             </th>
           </tr>
         </table>
-      </div>
+      </div> -->
       <script src="/1017projekt/public/javascripts/userData.js"></script>
+      <script src="/1017projekt/public/javascripts/menu.js"></script>
 </body>
 </html>
