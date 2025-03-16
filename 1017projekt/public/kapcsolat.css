@@ -9,27 +9,32 @@ html {
   }
   
 
-
-  table, td {
+  #main {
     border: 1px solid rgb(204, 193, 171);
     text-align: center;
-    border-spacing: 50px;
+    border-spacing: 10%;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(204, 193, 171);
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: row;
+    float: left;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: space-between;
+    vertical-align: middle;
+    width: fit-content;
+    align-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 100%;
   }
 
-  a{
-    color: #561C24;
-    text-decoration: none;
-    
+  ul{
+    list-style-type: none;
   }
-  a:hover{
-    color: #6D2932;
-  }
-  
   
   h1
   {
@@ -37,9 +42,9 @@ html {
     text-align: center;
     color:  rgb(204, 193, 171);
   }
-
-  a{
-    color: #6D2932;
+  #nyitvatartas{
+    font-size: larger;
+    width: 100%;
   }
   
   .btext {
@@ -56,4 +61,34 @@ html {
     width: 80%;
     padding: 20px;
     text-align: center;
+    width: 50%;
+    height: fit-content;
+    justify-content: center;
+
+  }
+
+  @media only screen and (max-width: 600px){
+
+    body{
+      width: 100%;
+    }
+    #main{
+      position: absolute;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5%;
+      margin-right: 10%;
+      padding: 3%;
+      width: 90%;
+
+    }
+    h1{
+      font-size:medium;
+    }
+    .btext{
+      height: 62%;
+      width: 70%;
+    }
   }

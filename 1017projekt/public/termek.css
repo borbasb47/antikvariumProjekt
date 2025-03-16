@@ -6,7 +6,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-left: 10%;
     margin-right: 10%;
-    width: 80%;
+    width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
     height: 80%;
@@ -16,7 +16,8 @@ body{
     float: left;
     width: 50%;
     /*padding: 5%;*/
-    width: fit-content;
+    text-align: justify;
+
 }
 #book-details{
     float: left;
@@ -31,7 +32,7 @@ body{
 }
 
 #leiras{
-    width: 100%;
+    width: 80%;
     padding: 5%;
 }
 
@@ -129,9 +130,20 @@ a:hover{
     max-width: 200px;
 }
 
-#rolunk{
-    margin-top: 5%;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+#kosar{
+    background-color: #561C24;
+    color: #E8D8C4;
+    border-radius: 10px;
+    font-size: large;
+    border: none;
+    padding: 2%;
+}
+
+#kosar:hover{
+    background-color: #6D2932;
+}
+
+#kep img{
+    max-width: 300px;
+    margin-top: 10px;
 }

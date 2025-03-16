@@ -1,24 +1,26 @@
-html {
+body {
     background-repeat: repeat;
     background-image: url("ea683eb4c40b00ea36d30fbd4c71652a.jpg");
     
     background-blend-mode: overlay;
     background-blend-mode: lighten;
     height: 100%;
+    width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
   }
   
 
 
-  table, td {
+  #userDataTable {
     border: 1px solid rgb(204, 193, 171);
     text-align: center;
-    border-spacing: 50px;
+    border-spacing: 5%;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(204, 193, 171);
     box-sizing: border-box;
+    width: 80%;
   }
 
   a{
@@ -50,6 +52,16 @@ html {
     transform: translate(-50%, -50%);
     z-index: 2;
     width: 80%;
-    padding: 20px;
+    padding: 2%;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 600px){
+    .bg-text{
+      width: 80%;
+      margin-left: 2%;
+      margin-right: 0;
+      padding: 0;
+      padding-bottom: 2%;
+    }
   }
