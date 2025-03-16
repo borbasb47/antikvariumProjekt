@@ -10,17 +10,9 @@
 </head>
 <body>
     <header>
-        <div class="menu" id="myTopnav">
-            <a href="/1017projekt/views/fooldal.html" class="active">Nap antikvárium</a>
-            <a href="/1017projekt/views/Konyvkereso.html">könyvek</a>
-            <a href="/1017projekt/views/Filmkereso.html">cd/dvd</a>
-            <a href="/1017projekt/views/kapcsolat.html">kapcsolat</a>
-            <a href="/1017projekt/views/felhasznalo.html">felhasználó</a>
-            <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div>
+        <div class="menu" id="menusav">
+
+        </div>
     </header>
     <br>
 <?php
@@ -48,11 +40,13 @@ echo '
     <div id="content">
         
         <div id="kep">
-            <img src="'.$row['kepURL'].'" alt="Könyv címe" style="max-width: 300px; margin-top: 10px;">
+            <img src="'.$row['kepURL'].'" alt="Könyv címe"> <br>
+            <button id="kosar">Kosárba</button>
             <h3>Leírás:</h3>
             <p id="leiras">'.$row['osszefoglalo'].'
             </p>
         </div>
+        
         <section id="book-details">
             
             <p id="szerzo"><strong>Szerző: </strong> '.$row['alkoto'].'</p> <hr>
@@ -71,7 +65,8 @@ echo '
     
 ?>
 
-    <script src="/1017projekt/public/javascripts/responsivity.js"></script>
+
+    <script src="/1017projekt/public/javascripts/menu.js"></script>
     <script src="/1017projekt/public/javascripts/Konyvkereso.js"></script>
     <script src="/1017projekt/public/javascripts/Filmkereso.js"></script>
 </body>
