@@ -46,7 +46,9 @@ loginForm.onsubmit=function(event){
         })
         .then(adat => {
             alert(adat.uzenet);
-            window.location.href = "/1017projekt/views/fooldal.html";
+            if(adat.redirect){
+                window.location.href = "/1017projekt/views/fooldal.html";
+            }
         })
         .catch(error => {
             alert(error.message);
