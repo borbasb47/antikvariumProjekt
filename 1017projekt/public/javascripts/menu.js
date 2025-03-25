@@ -8,6 +8,7 @@ function menu() {
     <a href="/1017projekt/views/Filmkereso.html">cd/dvd</a>
     <a href="/1017projekt/views/kapcsolat.html">kapcsolat</a>
     <a href="/1017projekt/views/felhasznalo.html">felhasználó</a>
+    <a href="/1017projekt/views/kosar.html">kosár</a>
     <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
