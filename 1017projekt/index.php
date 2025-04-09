@@ -17,7 +17,6 @@ switch ($path) {
         break;
     case "/1017projekt/views/fooldal.html":
         require_once('./views/fooldal.html');
-        require_once('./api/sessionTest.php');
         break;
     case "/1017projekt/views/konyv.html":
         require_once('./views/konyv.html');
@@ -25,6 +24,19 @@ switch ($path) {
     case "/1017projekt/views/felhasznalo.html":
         require_once('./views/felhasznalo.html');
         break;
+    case "/1017projekt/views/FilmKereso.html":
+        require_once("./views/FilmKereso.html");
+        break;
+    case "/1017projekt/views/Konyvkereso.html":
+        require_once("./views/Konyvkereso.html");
+        break;
+    case "/1017projekt/views/termek.html":
+        require_once("./views/termek.html");
+        break;
+    case "/1017projekt/views/kosar.html":
+        require_once('./views/kosar.html');
+        break;
+    
     default:
         echo "Az oldal nem található, <a href='/1017projekt/'>ugrás a címlapra</a>";
         break;

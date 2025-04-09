@@ -30,7 +30,7 @@ function kivalaszt(){
             if (termek.kategoriaID == kat) {
                 const sor = document.createElement('div');
                 sor.innerHTML = `
-                <a href="/1017projekt/API/termek.php?id=${termek.id}">
+                <a href="/1017projekt/views/termek.html?id=${termek.id}">
                     <div class="kartya">
                         <img src="${termek.kepURL}" alt="" id="termekKep">
                         <h2>${termek.cim}</h2>

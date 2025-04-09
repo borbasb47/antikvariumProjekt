@@ -10,6 +10,8 @@ function menu() {
     <a href="/1017projekt/views/felhasznalo.html">felhasználó</a>
     <a href="/1017projekt/views/kosar.html">kosár</a>
     <a href="/1017projekt/views/regisztracio.html" id="logOut">kijelentkezés</a>
+    <a href="/1017projekt/api/sessionTest.php">sessionTest</a>
+
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>

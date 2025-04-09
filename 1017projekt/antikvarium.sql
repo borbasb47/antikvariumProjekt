@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Már 16. 15:56
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2025. Ápr 07. 13:27
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -159,7 +159,11 @@ CREATE TABLE `felhasznalo` (
 
 INSERT INTO `felhasznalo` (`email`, `jelszo`, `pontok`, `iranyitoszam`, `utca`, `cim`, `telefonszam`, `id`) VALUES
 ('kriszti@gmail.com', '$2y$10$JfalzsGLwVGbeZnmIXt8feCJ7pyDYIbu9u3dGWy39vj0RqicAASzS', 0, NULL, 'none', 'none', '', 1),
-('kriszti05@gmail.com', '$2y$10$ZIQQuqKtgeyEE.ORdIjtU.iMmfvCDmIKa4kgFrwtX4E1ukUg62fEa', 0, NULL, 'none', 'none', '', 2);
+('kriszti05@gmail.com', '$2y$10$ZIQQuqKtgeyEE.ORdIjtU.iMmfvCDmIKa4kgFrwtX4E1ukUg62fEa', 0, NULL, 'none', 'none', '', 2),
+('random@gmail.com', '$2y$10$m.AHD1E.XMnf6tM5vt6oRuDlcejOJ7tDD5sGV6Z7YkRIyTEhfU/t2', 0, 8000, 'xd utca', '11', '', 3),
+('teszt1@gmail.com', '$2y$10$/eT.feaBW.99b3Sznu7iqudetCK2uZ6O2rhlRBtCpfV/3UcBMHxBy', 0, NULL, 'none', 'none', '', 4),
+('teszt2@gmail.com', '$2y$10$mQ6LspU9B2Wz2diocLLWJOBGdWEmPdJ0Rj4DS.SWHuyiqLDIQ6yW2', 0, 8000, 'ITTMEGOTT', 'NEM', '', 5),
+('greta@gmail.com', '$2y$10$QfH5W18l4eZBzqvd/VBJ5.Ol7KBu0k9S7awxGUhwKV0lnYJXgmtwu', 0, NULL, 'none', 'none', '', 6);
 
 -- --------------------------------------------------------
 
@@ -198,10 +202,10 @@ INSERT INTO `kategoriak` (`id`, `megnevezes`, `tipus`) VALUES
 --
 
 CREATE TABLE `kosar` (
-  `id` int(11) NOT NULL,
   `felhasznaloID` int(11) NOT NULL,
   `termekID` int(11) NOT NULL,
-  `megrendelesID` int(11) NOT NULL
+  `megrendelesID` int(11) NOT NULL,
+  `mennyiseg` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -497,7 +501,7 @@ ALTER TABLE `kategoriak`
 -- A tábla indexei `kosar`
 --
 ALTER TABLE `kosar`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`felhasznaloID`,`termekID`),
   ADD KEY `fk_termekID` (`termekID`),
   ADD KEY `fk_felhasznaloID` (`felhasznaloID`),
   ADD KEY `fk_megrendelesID` (`megrendelesID`);
@@ -545,19 +549,13 @@ ALTER TABLE `borito`
 -- AUTO_INCREMENT a táblához `felhasznalo`
 --
 ALTER TABLE `felhasznalo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT a táblához `kategoriak`
 --
 ALTER TABLE `kategoriak`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT a táblához `kosar`
---
-ALTER TABLE `kosar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT a táblához `termekek`

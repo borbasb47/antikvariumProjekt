@@ -3,153 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kosár</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        header {
-            background-color: #561C24;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .books {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .book {
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 15px;
-            width: 200px;
-            text-align: center;
-        }
-        .book button {
-            background-color: #561C24;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .book button:hover {
-            background-color: rgb(204, 193, 171);
-        }
-        .cart {
-            background-color: #f1f1f1;
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 100%;
-            box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
-        }
-        .cart h2 {
-            text-align: center;
-        }
-        .cart ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .cart ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .cart-total {
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="/1017projekt/public/menu.css">
+    <link rel="stylesheet" href="/1017projekt/public/termek.css">
+    <link rel="stylesheet" href="/1017projekt/public/egyeb.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
 </head>
 <body>
     <header>
-        <h1>Nap Antikvárium</h1>
-        <nav>
-            <ul>
-                <li><a href="/1017projekt/views/fooldal.html">Főoldal</a></li>
-                <li><a href="/1017projekt/views/Konyvkereso.html">Könyvek</a></li>
-                <li><a href="/1017projekt/views/Filmkereso.html">CD/DVD</a></li>
-                <li><a href="/1017projekt/views/Kapcsolat.html">Kapcsolat</a></li>
-            </ul>
-        </nav>
+        <div class="menu" id="menusav">
+        
+        </div>
     </header>
 
-    <main>
-       
-        <!-- ez kell a termékekhez-->
-        <section class="books">
-            <div class="book">
-                <h3>Harry Potter és a Bölcsek Köve</h3>
-                <p>Szerző: J.K. Rowling</p>
-                <p>Ár: 3999 Ft</p>
-                <button onclick="addToCart('Harry Potter és a Bölcsek Köve', 3999)">Hozzáadás a kosárhoz</button>
-            </div>
-            <div class="book">
-                <h3>Az éhezők viadala</h3>
-                <p>Szerző: Suzanne Collins</p>
-                <p>Ár: 2999 Ft</p>
-                <button onclick="addToCart('Az éhezők viadala', 2999)">Hozzáadás a kosárhoz</button>
-            </div>
-            <div class="book">
-                <h3>A kis herceg</h3>
-                <p>Szerző: Antoine de Saint-Exupéry</p>
-                <p>Ár: 1999 Ft</p>
-                <button onclick="addToCart('A kis herceg', 1999)">Hozzáadás a kosárhoz</button>
-            </div>
-        </section>
-    </main>
+    <div class="books" id="kosarItems">
 
-    <div class="cart" id="cart">
-        <h2>Kosár</h2>
-        <ul id="cartItems">
-          
-        </ul>
-        <div class="cart-total">
-            <p>Összesen: <span id="totalPrice">0 Ft</span></p>
-        </div>
     </div>
 
-    <script>
-        let cart = [];
-        let total = 0;
-
-        function addToCart(bookTitle, bookPrice) {
-            
-            cart.push({title: bookTitle, price: bookPrice});
-            total += bookPrice;
-
-           
-            const cartItems = document.getElementById('cartItems');
-            const totalPrice = document.getElementById('totalPrice');
-
-            
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.title} - ${item.price} Ft`;
-                cartItems.appendChild(li);
-            });
-
-            totalPrice.textContent = `${total} Ft`;
-        }
-    </script>
-    
+    <script src="/1017projekt/public/javascripts/menu.js"></script>
+    <script src="/1017projekt/public/javascripts/kosarContents.js"></script>
 </body>
 </html>

@@ -28,14 +28,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $isPasswordMatching=password_verify($password,$correctPassword);
             if($isPasswordMatching==true){
                 header("Content-Type: application/json");
-
+                
                 $_SESSION['email']=$email;
+                
                 
                 $feedback["uzenet"]="Sikeres bejelentkezés!";
                 $feedback["redirect"]=true;    
-
+                
                 echo json_encode($feedback);
-
+                
+                
+                
+                $idSql=$conn->query("select felhasznalo.id from felhasznalo where felhasznalo.email='$email'");
+                $idxd=mysqli_fetch_assoc($idSql)["id"];
+                $_SESSION["userId"]=$idxd;
                 // $loginAdd=$conn->query("update felhasznalo set felhasznalo.bejelentkezesekSzama=felhasznalo.bejelentkezesekSzama+1 WHERE felhasznalo.email='$email'");
             }
             else{

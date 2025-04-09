@@ -1,7 +1,7 @@
 function displayUserData() {
     fetch('/1017projekt/api/userData.php')   
         .then(response => response.json())
-        .then(adat => {
+         .then(adat => {
             console.log(adat.email);
             console.log(adat.iranyitoszam);
             console.log(adat.utca);
