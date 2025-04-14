@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Ápr 07. 13:27
+-- Létrehozás ideje: 2025. Ápr 14. 12:19
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -158,12 +158,12 @@ CREATE TABLE `felhasznalo` (
 --
 
 INSERT INTO `felhasznalo` (`email`, `jelszo`, `pontok`, `iranyitoszam`, `utca`, `cim`, `telefonszam`, `id`) VALUES
-('kriszti@gmail.com', '$2y$10$JfalzsGLwVGbeZnmIXt8feCJ7pyDYIbu9u3dGWy39vj0RqicAASzS', 0, NULL, 'none', 'none', '', 1),
 ('kriszti05@gmail.com', '$2y$10$ZIQQuqKtgeyEE.ORdIjtU.iMmfvCDmIKa4kgFrwtX4E1ukUg62fEa', 0, NULL, 'none', 'none', '', 2),
 ('random@gmail.com', '$2y$10$m.AHD1E.XMnf6tM5vt6oRuDlcejOJ7tDD5sGV6Z7YkRIyTEhfU/t2', 0, 8000, 'xd utca', '11', '', 3),
 ('teszt1@gmail.com', '$2y$10$/eT.feaBW.99b3Sznu7iqudetCK2uZ6O2rhlRBtCpfV/3UcBMHxBy', 0, NULL, 'none', 'none', '', 4),
 ('teszt2@gmail.com', '$2y$10$mQ6LspU9B2Wz2diocLLWJOBGdWEmPdJ0Rj4DS.SWHuyiqLDIQ6yW2', 0, 8000, 'ITTMEGOTT', 'NEM', '', 5),
-('greta@gmail.com', '$2y$10$QfH5W18l4eZBzqvd/VBJ5.Ol7KBu0k9S7awxGUhwKV0lnYJXgmtwu', 0, NULL, 'none', 'none', '', 6);
+('greta@gmail.com', '$2y$10$QfH5W18l4eZBzqvd/VBJ5.Ol7KBu0k9S7awxGUhwKV0lnYJXgmtwu', 0, NULL, 'none', 'none', '', 6),
+('kriszti@gmail.com', '$2y$10$LT7bpcdzfTELRPd48oHVWudmk2gxmcanB3YlxNMR39KZxZyxut/8C', 0, NULL, 'none', 'none', '', 7);
 
 -- --------------------------------------------------------
 
@@ -207,6 +207,14 @@ CREATE TABLE `kosar` (
   `megrendelesID` int(11) NOT NULL,
   `mennyiseg` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `kosar`
+--
+
+INSERT INTO `kosar` (`felhasznaloID`, `termekID`, `megrendelesID`, `mennyiseg`) VALUES
+(7, 100000, 0, 1),
+(7, 100016, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -549,7 +557,7 @@ ALTER TABLE `borito`
 -- AUTO_INCREMENT a táblához `felhasznalo`
 --
 ALTER TABLE `felhasznalo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT a táblához `kategoriak`
@@ -572,8 +580,13 @@ ALTER TABLE `termekek`
 --
 ALTER TABLE `kosar`
   ADD CONSTRAINT `fk_felhasznaloID` FOREIGN KEY (`felhasznaloID`) REFERENCES `felhasznalo` (`id`),
-  ADD CONSTRAINT `fk_megrendelesID` FOREIGN KEY (`megrendelesID`) REFERENCES `megrendeles` (`id`),
   ADD CONSTRAINT `fk_termekID` FOREIGN KEY (`termekID`) REFERENCES `termekek` (`id`);
+
+--
+-- Megkötések a táblához `megrendeles`
+--
+ALTER TABLE `megrendeles`
+  ADD CONSTRAINT `megrendeles_ibfk_1` FOREIGN KEY (`id`) REFERENCES `kosar` (`megrendelesID`);
 
 --
 -- Megkötések a táblához `termekek`
