@@ -16,8 +16,10 @@ function displayKosarData() {
             adat.forEach(kosarElement => {
                 const sor = document.createElement('div');
                 sor.innerHTML = `
-                <div class="xd">
+                <div class="kartya">
+                    <img src="${kosarElement.kepURL}" alt="" id="termekKep">
                     <h2>${kosarElement.cim}</h2>
+                    <p>${kosarElement.alkoto}</p>
                     <p>${kosarElement.mennyiseg}</p>
                 </div>
                 `;
