@@ -40,3 +40,25 @@ body{
         margin-right: 5%;
     }
   }
+
+button{
+    background-color: #561C24;
+    color: #E8D8C4;
+    border-radius: 10px;
+    font-size: large;
+    border: none;
+    padding: 1%;
+    margin-top: 5%;
+    margin: auto;
+}
+
+button:hover{
+background-color: #6D2932;
+}
+
+#tartalom{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+}
