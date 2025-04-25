@@ -4,9 +4,10 @@ body{
 }
 
 #main{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 13%;
+    margin-right: 10%;
     justify-content: center;
+    width: 80%;
 }
 
 #rolunk{
@@ -16,13 +17,14 @@ body{
     margin-left: 12%;
     margin-right: 12%;
 }
+
 #b img{
     width: 100%;
 }
 
 #b{
     width: 50%;
-    margin-left: 17%;
+    margin-left: 23%;
     margin-right: 12%;
     margin-bottom: 7%;
     justify-content: center;
