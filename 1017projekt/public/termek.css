@@ -6,7 +6,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-left: 10%;
     margin-right: 10%;
-    width: 100%;
+    width: 90%;
     padding-top: 30px;
     padding-bottom: 30px;
     height: 80%;
@@ -21,9 +21,10 @@ body{
 }
 #book-details{
     float: left;
-    width: 50%;
+    width: 35%;
     padding: 5%;
     margin-bottom: 5%;
+    flex-wrap: wrap;
 }
 
 #content{
