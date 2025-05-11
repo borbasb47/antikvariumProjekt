@@ -1,0 +1,70 @@
+body {
+    background-repeat: repeat;
+    background-image: url("ea683eb4c40b00ea36d30fbd4c71652a.jpg");
+    
+    background-blend-mode: overlay;
+    background-blend-mode: lighten;
+    height: 100%;
+    
+  }
+  
+
+
+  #gomb {
+    border: 1px solid rgb(204, 193, 171);
+    text-align: center;
+    border-spacing: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(204, 193, 171);
+    box-sizing: border-box;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 50%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  a{
+    color: #561C24;
+    text-decoration: none;
+    
+  }
+  a:hover{
+    color: #6D2932;
+  }
+  
+  
+  h1
+  {
+    background-color: #561C24;
+    text-align: center;
+    color:  rgb(204, 193, 171);
+  }
+
+  .bg-text {
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 60%;
+    padding: 2%;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 600px){
+    .bg-text{
+      width: 55%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    #gomb{
+      width: 100%;
+      font-size: 90%;
+    }
+  }

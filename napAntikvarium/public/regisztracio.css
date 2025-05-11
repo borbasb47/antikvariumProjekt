@@ -1,0 +1,60 @@
+body, html {
+    background-repeat: repeat;
+    background-image: url("ea683eb4c40b00ea36d30fbd4c71652a.jpg");
+    background-blend-mode: overlay;
+    background-blend-mode: lighten;
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .konyv {
+    
+    
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+  
+    
+    height: 100%;
+    
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  }
+  
+  
+    button{
+      background-color: #561C24;
+      color: #E8D8C4;
+      border-radius: 10px;
+      font-size: large;
+      border: none;
+      padding: 1%;
+      margin-top: 5%;
+}
+
+button:hover{
+  background-color: #6D2932;
+}
+
+    .registrationForm, .loginForm{
+    border: 1px solid rgb(204, 193, 171);
+    text-align: center;
+    border-spacing: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(204, 193, 171);
+    padding-bottom: 5%;
+    width: 80%;
+}
+
+@media only screen and (max-width: 600px){
+  button{
+    padding: 5%;
+  }
+}
