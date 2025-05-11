@@ -2,10 +2,6 @@ function displayUserData() {
     fetch('/napAntikvarium/api/userData.php')   
         .then(response => response.json())
          .then(adat => {
-            console.log(adat.email);
-            console.log(adat.iranyitoszam);
-            console.log(adat.utca);
-            console.log(adat.hazszam);
             const userEmailElement = document.getElementById("userEmail");
             const userZipCodeElement = document.getElementById("userZipCode");
             const userStreetElement = document.getElementById("userStreet");
@@ -33,30 +29,35 @@ function displayUserData() {
                 const userAddressInputElement = document.getElementById("userAddressInput");
 
                 submitButton.onclick=function(){
-                    const userAddressData={zipCode:userZipCodeInputElement.value,street:userStreetInputElement.value,address:userAddressInputElement.value}
-                    const userAddressDataJson=JSON.stringify(userAddressData)
-                    fetch('/napAntikvarium/api/userData.php', {
-                        method: 'POST',
-                        header: 'Content-Type: application/json',
-                        body: userAddressDataJson
-                        
-                    })
-                    .then(valasz => {
-                        if(!valasz.ok)
-                        {
-                            throw new Error("hiba lépett fel!")
-                        }
-                        return valasz.json();
-                    })
-                    .then(adat => {
-                        alert(adat.uzenet);
-                        if(adat.refresh){
-                            window.location.reload();
-                        }
-                    })
-                    .catch(error => {
-                        alert(error.message);
-                    })
+                    if(userZipCodeInputElement.value==""||userStreetInputElement.value==""||userAddressInputElement.value==""){
+                        alert("Valamelyik mezőt üresen hagytad!")
+                    }
+                    else{
+                        const userAddressData={zipCode:userZipCodeInputElement.value,street:userStreetInputElement.value,address:userAddressInputElement.value}
+                        const userAddressDataJson=JSON.stringify(userAddressData)
+                        fetch('/napAntikvarium/api/userData.php', {
+                            method: 'POST',
+                            header: 'Content-Type: application/json',
+                            body: userAddressDataJson
+                            
+                        })
+                        .then(valasz => {
+                            if(!valasz.ok)
+                            {
+                                throw new Error("hiba lépett fel!")
+                            }
+                            return valasz.json();
+                        })
+                        .then(adat => {
+                            alert(adat.uzenet);
+                            if(adat.refresh){
+                                window.location.reload();
+                            }
+                        })
+                        .catch(error => {
+                            alert(error.message);
+                        })
+                    }
             
                 }
             }
