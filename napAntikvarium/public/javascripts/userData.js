@@ -69,6 +69,18 @@ function displayUserData() {
                 userZipCodeLine.innerHTML+=" "+adat.iranyitoszam
                 userStreetLine.innerHTML+=" "+adat.utca
                 userAddressLine.innerHTML+=" "+adat.hazszam
+                const userDataTable=document.getElementById("userDataTable")
+
+                const deleteButton=document.createElement("button")
+                deleteButton.innerHTML="Adatok törlése"
+                userDataTable.appendChild(deleteButton)
+                deleteButton.onclick=function(){
+                    fetch('/napAntikvarium/api/deleteAddress.php',{
+                        method:"DELETE"
+                    })
+                    window.location.reload();
+                }
+
             }
         });
 }

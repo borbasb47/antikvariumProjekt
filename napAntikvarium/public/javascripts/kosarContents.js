@@ -40,7 +40,9 @@ function displayKosarData() {
                         Fizetendő: ${osszar} Ft</p>
                     <p>Szállítási cím: A felhasználói profilban megadott cím</p>
                 `
-                    fetch('/napAntikvarium/api/emptyKosarContents.php')   
+                    fetch('/napAntikvarium/api/emptyKosarContents.php',{
+                        method:"DELETE"
+                    })   
                     .then(valasz => {
                         if(!valasz.ok)
                         {
@@ -50,6 +52,23 @@ function displayKosarData() {
                     })
 
                 }
+                let empty = document.getElementById("emptyKosar")
+                empty.onclick = function (event) {
+                    event.preventDefault()
+                    fetch('/napAntikvarium/api/emptyKosarContents.php',{
+                        method:"DELETE"
+                    })   
+                    .then(valasz => {
+                        if(!valasz.ok)
+                        {
+                            throw new Error("hiba lépett fel!")
+                        }
+                        return valasz.json();
+                    })
+                    window.location.reload();
+
+                }
+
             });
 
         }
